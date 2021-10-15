@@ -5,16 +5,15 @@ import java.util.List;
 public class Portfolio {
   List<Stock> stockList;
 
-  public Portfolio(List stockList){
+  public Portfolio(List<Stock> stockList) {
     this.stockList = new ArrayList<Stock>();
   }
 
-  public void addStocks(Stock stock){
+  public void addStocks(Stock stock) {
     this.stockList.add(stock);
   }
 
-
-  public Double profit(Stock stock, LocalDate intialDate, LocalDate endDate){
+  public Double profit(Stock stock, LocalDate intialDate, LocalDate endDate) {
     double totalExpense = stock.stockMap.get(intialDate);
     double totalRevenue = stock.stockMap.get(endDate);
 
@@ -27,15 +26,12 @@ public class Portfolio {
     return netProfit;
   }
 
-  public Double netProfit(double totalExpense, double totalRevenue){
+  public Double netProfit(double totalExpense, double totalRevenue) {
     return totalRevenue - totalExpense;
   }
 
-  public Double netProfitMargin(double netProfit, double totalRevenue){
+  public Double netProfitMargin(double netProfit, double totalRevenue) {
     return netProfit / totalRevenue * 100;
   }
-
-
-
 
 }
